@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TJ SCT - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue-red.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="mdl-layout__container">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header has-drawer is-upgraded">
+            <header class="mdl-layout__header is-casting-shadow">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title">{{ self.title() }}</span>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer">
+                <header class="mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+                    Senior Computer Team
+                </header>
+                <nav class="mdl-navigation mdl-color--blue-grey-700 mdl-color-text--white">
+                    <a class="mdl-navigation__link" href="index.php">
+                        <i class="material-icons" role="presentation">home</i>
+                        Home
+                    </a>
+                    <a class="mdl-navigation__link" href="competitions.php">
+                        <i class="material-icons" role="presentation">poll</i>
+                        Competitions
+                    </a>
+                    <a class="mdl-navigation__link" href="lectures.php">
+                        <i class="material-icons" role="presentation">description</i>
+                        Lectures
+                    </a>
+                    <a class="mdl-navigation__link" href="schedule.php">
+                        <i class="material-icons" role="presentation">event</i>
+                        Schedule
+                    </a>
+                    <a class="mdl-navigation__link" href="links.php">
+                        <i class="material-icons" role="presentation">link</i>
+                        Links
+                    </a>
+                </nav>
+                <footer class="mdl-color--blue-grey-700 mdl-color-text--blue-grey-50">
+                    <h6>2016-2017 Officers:</h6>
+                    <p>Captain: Kevin Geng</p>
+                    <p>Co-Captains: Larry Wang and Charles Zhao</p>
+                    <p>Statistician: Justin Zhang</p>
+                </footer>
+            </div>
+            <main class="mdl-layout__content">
+                {% block body %}{% endblock %}
+            </main>
+            <div class="mdl-layout__obfuscator"></div>
+        </div>
+    </div>
+</body>
+</html>

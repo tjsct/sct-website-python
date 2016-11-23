@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<h3>Welcome to SCT!</h3>
+<p>Welcome to Thomas Jefferson's Senior Computer Team! The Senior Computer Team, or SCT, meets every Friday B-block. Our objective is to practice and enhance problem-solving skills involving programming. We compete in several contests, including USACO, Topcoder, and ACM on the national and international level. Please come by!</p>
+<form action="https://lists.tjhsst.edu/subscribe/scteam" method="POST">
+    <div class="mdl-card mdl-shadow--2dp mailing-list-card">
+        <div class="mdl-card__title mdl-card--expand">
+            <h4 class="mdl-card__title-text">SCT mailing list</h4>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <p>Sign up for our mailing list! We will send out updates about programming contests and computer team events.</p>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input name="email" class="mdl-textfield__input" type="email" id="mailing-list-email" />
+                <label class="mdl-textfield__label" for="mailing-list-email">Email address</label>
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <button type="submit" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect">
+                Sign up
+            </button>
+        </div>
+    </div>
+</form>
+{% endblock %}
