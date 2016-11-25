@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_from_directory
 
 app = Flask(__name__)
 
@@ -33,6 +33,11 @@ def links():
 @app.route('/styles.css', methods=['GET'])
 def styles():
     return app.send_static_file('styles.css')
+
+
+@app.route('/lectures/<path:path>')
+def lecture_files(path):
+    return send_from_directory('lectures', path)
 
 
 @app.after_request

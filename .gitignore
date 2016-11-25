@@ -1,0 +1,4 @@
+lectures/
+env/
+*.pyc
+__pycache__
