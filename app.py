@@ -2,6 +2,7 @@
 
 import os
 from flask import Flask, request, render_template, send_from_directory
+from util import get_lectures
 
 app = Flask(__name__)
 
@@ -20,7 +21,8 @@ def competitions():
 
 @app.route('/lectures.php', methods=['GET'])
 def lectures():
-    return render_template('lectures.html')
+    l = get_lectures().items()
+    return render_template('lectures.html', years=sorted(l, reverse=True))
 
 @app.route('/schedule.php', methods=['GET'])
 def schedule():
