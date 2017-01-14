@@ -1,36 +1,40 @@
-def get_lectures():
-	import csv, datetime, requests
+#!/usr/bin/env python3
 
-	l = []
-	labels = []
-	url = "https://docs.google.com/spreadsheets/d/1RH4JnXZZaV78hEnzDC_LRxR5wAsy7qhmTMJzpy8yoy8/pub?gid=0&single=true&output=csv"
-	f = requests.get(url).content.decode("utf-8")
+import collections
+import csv
+import datetime
+import io
+import requests
 
-	reader = csv.reader(f.splitlines(), delimiter=',', quotechar='"')
-	first = True
-	for row in reader:
-		if first:
-			labels = row
-			first = False
-			continue
-		if len("".join(row)) == 0:
-			continue
-		l.append(row)
+SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1RH4JnXZZaV78hEnzDC_LRxR5wAsy7qhmTMJzpy8yoy8/pub?gid=0&single=true&output=csv'
 
-	years = {}
-	for r in l:
-		if r[0] not in years:
-			years[r[0]] = []
-		row = {}
-		for i in range(len(r)):
-			row[labels[i]] = r[i]
-		try:
-			row['Date'] = \
-				datetime.datetime.strptime(row['Date'], "%Y/%m/%d") \
-					.strftime("%B %d, %Y")
-		except:
-			pass
-		years[r[0]].append(row)
-	for year in years:
-		years[year].reverse()
-	return years
+def get_lectures_by_year():
+    r = requests.get(SPREADSHEET_URL)
+    f = io.StringIO(r.text)
+    reader = csv.DictReader(f)
+
+    # group lectures by year
+    lectures_by_year = collections.defaultdict(list)
+    for row in reader:
+        year, date = row['year'], row['date']
+        if not year:
+            continue
+
+        # attempt to parse date
+        if date:
+            try:
+                dt = datetime.datetime.strptime(date, '%Y-%m-%d')
+                row['formatted_date'] = dt.strftime('%B %d, %Y')
+            except:
+                pass
+
+        lectures_by_year[year].append(row)
+
+    # reverse order of lectures
+    for y in lectures_by_year:
+        lectures_by_year[y].reverse()
+
+    # sort by year in reverse chronological order
+    return collections.OrderedDict(
+            sorted(lectures_by_year.items(), reverse=True))
+

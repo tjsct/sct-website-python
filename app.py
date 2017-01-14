@@ -2,9 +2,13 @@
 
 import os
 from flask import Flask, request, render_template, send_from_directory
-from util import get_lectures
+
 
 app = Flask(__name__)
+
+# retrieve lectures on startup
+import util
+lectures_by_year = util.get_lectures_by_year()
 
 
 @app.route('/', methods=['GET'])
@@ -21,8 +25,8 @@ def competitions():
 
 @app.route('/lectures.php', methods=['GET'])
 def lectures():
-    l = get_lectures().items()
-    return render_template('lectures.html', years=sorted(l, reverse=True))
+    return render_template('lectures.html',
+            lectures_by_year=lectures_by_year)
 
 @app.route('/schedule.php', methods=['GET'])
 def schedule():

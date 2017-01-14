@@ -2,7 +2,7 @@
 {% block title %}Lectures{% endblock %}
 {% block body %}
 
-{% for year, lectures in years %}
+{% for year, lectures in lectures_by_year.items() %}
 <table class="mdl-data-table mdl-js-data-table lectures-table">
     <thead>
         <tr>
@@ -10,12 +10,16 @@
         </tr>
     </thead>
     <tbody>
-		{% for l in lectures %}
+        {% for l in lectures %}
         <tr>
             <td class="mdl-data-table__cell--non-numeric">
-		{{ l.Date }} - 
-		<a href="{{ l.Link }}">{{ l.Title }}</a>
-	    </td>
+                {{ l.formatted_date or "No date" }} -
+
+                {% if l.link %}<a href="{{ l.link }}">{{ l.title }}</a>
+                {% else %}<em>{{ l.title }}</em>{% endif %}
+
+                {% if l.author %} ({{ l.author }}){% endif %}
+            </td>
         </tr>
         {% endfor %}
     </tbody>
