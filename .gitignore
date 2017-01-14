@@ -2,4 +2,3 @@ lectures/
 env/
 *.pyc
 __pycache__
-start-server.sh
