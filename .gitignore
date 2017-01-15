@@ -1,4 +1,4 @@
 lectures/
 env/
-*.pyc
+*.py[c|o|d]
 __pycache__
