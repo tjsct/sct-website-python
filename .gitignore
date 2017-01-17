@@ -2,3 +2,4 @@ lectures/
 env/
 *.pyc
 __pycache__
+usaco_scores/scores.db

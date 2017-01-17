@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
 import os
+
 from flask import Flask, request, render_template, send_from_directory
 
-
 app = Flask(__name__)
+
+# set up usaco scores
+import usaco_scores.app
+app.register_blueprint(usaco_scores.app.page, url_prefix='/usaco_scores')
 
 # retrieve lectures on startup
 import util

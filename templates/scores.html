@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>USACO Scores</title>
+    <link href="https://user.tjhsst.edu/2017kgeng/static/main.css" rel="stylesheet">
+</head>
+<body>
+    <h1>2015-16 Platinum Scores</h1>
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>Year</th>
+            <th>Name</th>
+            <th>December</th>
+            <th>January</th>
+            <th>February</th>
+            <th>Total</th>
+        </tr>
+        {% for c in query %}
+        {% if c.country == 'USA' %}
+        <tr>
+            <td>{{ c.country }}</td>
+            <td>{{ c.gradyear }}</td>
+            <td>{{ c.name }}</td>
+            <td>{{ c.score_dec }}</td>
+            <td>{{ c.score_jan }}</td>
+            <td>{{ c.score_feb }}</td>
+            <td>{{ c.score_total }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+</body>
+</html>
