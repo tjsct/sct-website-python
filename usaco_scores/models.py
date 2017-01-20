@@ -7,14 +7,24 @@ from peewee import *
 dir_path = os.path.dirname(os.path.realpath(__file__))
 db = SqliteDatabase(os.path.join(dir_path, 'scores.db'))
 
+
 class Competitor(Model):
     name = CharField()
     country = CharField()
     gradyear = CharField()
 
-    score_dec = IntegerField(default=0)
-    score_jan = IntegerField(default=0)
-    score_feb = IntegerField(default=0)
+    # 2015-16 scores
+    score_dec15 = IntegerField(default=0)
+    score_jan16 = IntegerField(default=0)
+    score_feb16 = IntegerField(default=0)
+
+    # 2016-17 scores
+    score_dec16 = IntegerField(default=0)
+    score_jan17 = IntegerField(default=0)
+    score_feb17 = IntegerField(default=0)
+
+    # attendance for 2016-17
+    attendance = IntegerField(default=0)
 
     class Meta:
         indexes = (
@@ -23,8 +33,10 @@ class Competitor(Model):
         )
         database = db
 
-if __name__ == '__main__':
+
+def clear_tables():
+    table_list = [Competitor]
     db.connect()
-    db.drop_tables([Competitor], safe=True)
-    db.create_tables([Competitor])
+    db.drop_tables(table_list, safe=True)
+    db.create_tables(table_list)
 

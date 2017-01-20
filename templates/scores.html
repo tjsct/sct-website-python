@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue-red.min.css" />
     <style>
         .content {
-            max-width: 800px;
             margin: 0 auto;
             padding: 20px 36px;
         }
@@ -17,7 +16,7 @@
 <div class="mdl-layout">
 <div class="content mdl-layout__content">
     <h1>USACO Scores</h1>
-    <h3>2015-16 Platinum Scores (pre-college)</h3>
+    <h3>2015-16 and 2016-17 Platinum Scores (pre-college)</h3>
     <p>View: <a href="?">USA only</a> / <a href="?international=1">International</a></p>
     <table class="mdl-data-table">
         <thead>
@@ -26,9 +25,14 @@
                 <th class="mdl-data-table__cell--non-numeric">Country</th>
                 <th class="mdl-data-table__cell--non-numeric">Year</th>
                 <th class="mdl-data-table__cell--non-numeric">Name</th>
-                <th>December</th>
-                <th>January</th>
-                <th>February</th>
+                <th>Dec 15</th>
+                <th>Jan 16</th>
+                <th>Feb 16</th>
+                <th>Total</th>
+                <th>Dec 16</th>
+                <th>Jan 17</th>
+                <th>Feb 17</th>
+                <th>Total</th>
                 <th>Total</th>
             </tr>
         </thead>
@@ -39,10 +43,15 @@
                 <td class="mdl-data-table__cell--non-numeric">{{ c.country }}</td>
                 <td class="mdl-data-table__cell--non-numeric">{{ c.gradyear }}</td>
                 <td class="mdl-data-table__cell--non-numeric">{{ c.name }}</td>
-                <td>{{ c.score_dec }}</td>
-                <td>{{ c.score_jan }}</td>
-                <td>{{ c.score_feb }}</td>
-                <td><strong>{{ c.score_total }}</strong></td>
+                <td>{{ c.score_dec15 }}</td>
+                <td>{{ c.score_jan16 }}</td>
+                <td>{{ c.score_feb16 }}</td>
+                <td><strong>{{ c.score_total_1516 }}</strong></td>
+                <td>{{ c.score_dec16 }}</td>
+                <td>{{ c.score_jan17 }}</td>
+                <td>{{ c.score_feb17 }}</td>
+                <td><strong>{{ c.score_total_1617 }}</strong></td>
+                <td><strong><em>{{ c.score_total_all }}</em></strong></td>
             </tr>
             {% endfor %}
         </tbody>
