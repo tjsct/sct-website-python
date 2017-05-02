@@ -41,8 +41,12 @@ main {
     font-size: .75em;
 }
 .lectures-table {
-    width: 100%;
+    /* width: 100%; */
     margin-top: 20px;
+}
+.schedule-calendar {
+    margin-top: 20px;
+    border-width: 0;
 }
 .mailing-list-card .mdl-card__title {
     background: #46B6AC;
