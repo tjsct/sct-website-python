@@ -10,6 +10,7 @@ SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1RH4JnXZZaV78hEnzDC_LR
 
 def get_lectures_by_year():
     r = requests.get(SPREADSHEET_URL)
+    r.encoding = 'utf-8'
     f = io.StringIO(r.text)
     reader = csv.DictReader(f)
 
