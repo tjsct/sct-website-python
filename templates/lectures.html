@@ -9,6 +9,7 @@
         <tr>
             <th class="mdl-data-table__cell--non-numeric">Date</th>
             <th class="mdl-data-table__cell--non-numeric">Title</th>
+            <th class="mdl-data-table__cell--non-numeric">Level</th>
             <th class="mdl-data-table__cell--non-numeric">Author</th>
         </tr>
     </thead>
@@ -21,6 +22,9 @@
             <td class="mdl-data-table__cell--non-numeric">
                 {% if l.link %}<a href="{{ l.link }}">{{ l.title }}</a>
                 {% else %}<em>{{ l.title }}</em>{% endif %}
+            </td>
+            <td class="mdl-data-table__cell--non-numeric">
+                {% if l.level %}{{ l.level }}{% else %}<i>No level</i>{% endif %}
             </td>
             <td class="mdl-data-table__cell--non-numeric">
                 {% if l.author %}{{ l.author }}{% else %}<i>No author</i>{% endif %}
