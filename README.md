@@ -20,3 +20,10 @@ Install node packages by going to `/static` and running
 npm install package.json
 ```
 
+## File Structure
+
+- `files/config.json`: Configuration file which defines variables given to each
+template. Only used parameter is `static`, which gives the static URL (should be
+set to "/sct/static" on the Director site and "/static" when locally testing).
+- `templates/helper`: Defines a global header, footer, and base template.
+

@@ -1,0 +1,12 @@
+{% macro list_links(links) %}
+    <ul>
+      {% for link, text in links %}
+          <li><a href="{{ link }}">{{ text }}</a></li>
+      {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro get(x, default) %}
+{% if x %}{{ x  }}{% else %}{{ default  }}{% endif %}
+{% endmacro %}
+

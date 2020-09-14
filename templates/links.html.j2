@@ -1,167 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "helper/base.html.j2" %}
 
-<head>
+{% block title %}Useful Links{% endblock %}
+{% block subtitle %}{% endblock %}
+{% block image %}links.jpg{% endblock %}
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Havish Malladi">
+{% block content %}
+<h4>SCT links</h4>
+{{ f.list_links([
+("mailto:tjhsstsctcaptains@gmail.com", "Email"),
+("http://codeforces.com/group/M4wsRWBHyZ/", "Codeforces group"),
+("https://www.facebook.com/groups/tjsct/", "Facebook group"),
+("https://github.com/tjsct", "GitHub organization"),
+]) }}
 
-    <title>TJ SCT</title>
+<h4>Resources</h4>
+{{ f.list_links([
+("https://github.com/alwayswimmin/cs_guide", "Samuel Hsiang's Crash Course Coding Companion"),
+("http://usaco.org/index.php?page=resources", "USACO list of resources"),
+]) }}
 
-    <!-- Bootstrap core CSS -->
-    <link href="/sct/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<h4>Contests</h4>
+{{ f.list_links([
+("http://usaco.org/", "USA Computing Olympiad Contest Gateway"),
+("http://train.usaco.org/", "USA Computing Olympiad Training Page"),
+("http://acm.sgu.ru/olimp/", "Saratov Online Grader"),
+("https://www.spoj.com/", "Sphere Online Judge"),
+("https://icpcarchive.ecs.baylor.edu/", "ACM Problem Archive"),
+("http://ipsc.ksp.sk", "Internet Problem Solving Contest"), 
+("http://www.topcoder.com/tc", "TopCoder"),
+("https://www.nacloweb.org/", "North American Computational Linguistics Olympiad"),
+]) }}
 
-    <!-- Custom fonts for this template -->
-    <link href="/sct/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</ul>
+{% endblock %}
 
-    <!-- Custom styles for this template -->
-    <link href="/sct/static/css/clean-blog.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-    <!-- Navigation -->
-     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.php">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Lectures
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="1920lectures.php">2019-20</a>
-                            <a class="dropdown-item" href="1819lectures.php">2018-19</a>
-                            <a class="dropdown-item" href="1718lectures.php">2017-18</a>
-                            <a class="dropdown-item" href="1617lectures.php">2016-17</a>
-                            <a class="dropdown-item" href="1516lectures.php">2015-16</a>
-                            <a class="dropdown-item" href="otherlectures.php">Older Lectures</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="schedule.php">Schedule</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            History
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="1920history.php">2019-20</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://activities.tjhsst.edu/tjioi" target="_blank">TJ IOI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="links.php">Links</a>
-                    </li>
-                
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <header class="masthead" style="background-image: url('/sct/static/img/links.jpg')">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="page-heading">
-                        <h1>Useful Links</h1>
-                        <!--<span class="subheading">Not</span> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <h4>SCT links</h4>
-                        <ul>
-                            <li><a href="mailto:tjhsstsctcaptains@gmail.com">Email</a></li>
-                            <li><a href="http://codeforces.com/group/M4wsRWBHyZ/">Codeforces group</a></li>
-                            <li><a href="https://www.facebook.com/groups/tjsct/">Facebook group</a></li>
-                            <li><a href="https://github.com/tjsct">GitHub organization</a></li>
-                        </ul>
-
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="https://github.com/alwayswimmin/cs_guide">Samuel Hsiang's Crash Course Coding Companion</a></li>
-                            <li><a href="http://usaco.org/index.php?page=resources">USACO list of resources</a></li>
-                        </ul>
-
-                        <h4>Contests</h4>
-                        <ul>
-                            <li><a href="http://usaco.org/">USA Computing Olympiad Contest Gateway</a></li>
-                            <li><a href="http://train.usaco.org/" target="blank">USA Computing Olympiad Training Page</a></li>
-                            <li><a href="http://acm.sgu.ru/" target="blank">Saratov Online Grader</a></li>
-                            <li><a href="http://www.spoj.pl/" target="blank">Sphere Online Judge</a></li>
-                            <li><a href="http://acm.uva.es/problemset" target="blank">ACM Problem Archive</a></li>
-                            <li><a href="http://ipsc.ksp.sk" target="blank">Internet Problem Solving Contest</a></li>
-                            <li><a href="http://www.topcoder.com/tc" target="blank">TopCoder</a></li>
-                            <li><a href="http://www.naclo.cs.cmu.edu" target="blank">North American Computational Linguistics Olympiad</a></li>
-                        </ul>
-                </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="https://www.facebook.com/groups/tjsct/">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://github.com/tjsct">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Havish Malladi 2020</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="/sct/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/sct/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="/sct/static/js/clean-blog.min.js"></script>
-
-</body>
-
-</html>

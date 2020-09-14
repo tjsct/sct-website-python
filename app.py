@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-import os
-import collections
+import os, collections, json
 from flask import Flask, request, render_template, send_from_directory, redirect, url_for
 
 app = Flask(__name__)
 
 # globals
 FILE = ".html.j2" # file extention
+CONFIG = json.load(open("files/config.json")) # config
 
 @app.context_processor
 def globals() -> dict:
     """ Returns all the global variables passed to every template. """
-    return {"static": "hi"}
+    return CONFIG
 
 # set up usaco scores
 import usaco_scores.app

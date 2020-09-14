@@ -1,434 +1,299 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "helper/base.html.j2" %}
 
-<head>
+{% block title %}What is SCT?{% endblock %}
+{% block subtitle %}{% endblock %}
+{% block image %}about.jpg{% endblock %}>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Havish Malladi">
+{% block content %}
+<p><strong>Senior Computer Team</strong> is an 8th period club at TJ that holds lectures and practice contests throughout the year. The lectures are primarily geared towards preparing for USACO contests. Specifically, beginner lectures are targeted for the Silver division, and advanced lectures are targeted at the Gold and Platinum divisions. Make sure you sign up for the mailing list or join the Facebook group to stay up-to-date!</p>
+<p>Although SCT does select teams to travel contests every year, the main focus is USACO, which is an individual contest. Because of the format of the club, the concept of "membership" in SCT isn't really a thing. Don't be afraid to stop by, even if you've never come before! And no, you don't have to be a senior: the only restriction on grade level is that freshmen may not travel with SCT.</p>
+<p>You should also consider attending SCT's sister clubs: the <a href="https://activities.tjhsst.edu/ict/"><strong>Intermediate Computer Team (ICT)</strong></a> and the <strong>Freshman Computer Team (FCT)</strong>, also known as the Frosh 'Puter Team. The focus of those clubs is slightly different, concentrating more on ACSL, though they also travel to some of the same competitions.</p>
 
-  <title>TJ SCT</title>
+<h3>Officers</h3>
 
-  <!-- Bootstrap core CSS -->
-  <link href="/sct/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<h4>Current (2019-20)</h4>
+<ul>
+    <li><em>Captain:</em><a href="mailto:2020rzhan@tjhsst.edu"> Richard Zhan</a></li>
+    <li><em>Co-captain:</em> <a href="mailto:2020nkoppara@tjhsst.edu">Neeyanth Kopparapu</a></li>
+    <li><em>Co-captain:</em> <a href="mailto:2020pzhang@tjhsst.edu">Patrick Zhang</a></li>
+    <li><em>Statistician:</em><a href="mailto:2020hmalladi@tjhsst.edu"> Havish Malladi</a></li>
+    <li><em>Sponsor:</em> Mr. Eckel</li>
+</ul>
 
-  <!-- Custom fonts for this template -->
-  <link href="/sct/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<p>Senior Computer Team has a long history at TJHSST. Below is a list of its officers and sponsors reaching back through the 1996-97 school year, compiled by spelunking through the Wayback Machine.</p>
 
-  <!-- Custom styles for this template -->
-  <link href="/sct/static/css/clean-blog.min.css" rel="stylesheet">
+<details>
+    <summary>Past officers</summary>
 
-</head>
+    <h4>2018-19</h4>
+    <ul>
+        <li><em>Captain:</em> Daniel Wisdom</li>
+        <li><em>Co-captain:</em> Jongwan Kim</li>
+        <li><em>Co-captain:</em> George Tang</li>
+        <li><em>Statistician:</em> Charlie Gunn</li>
+        <li><em>Sponsor:</em> Ms. Galanos</li>
+    </ul>
 
-<body>
+    <h4>2017-18</h4>
+    <ul>
+        <li><em>Captain:</em> Justin Zhang</li>
+        <li><em>Co-captain:</em> Mihir Patel</li>
+        <li><em>Co-captain:</em> Daniel Wisdom</li>
+        <li><em>Statistician:</em> Srinidhi Krishnamurthy</li>
+        <li><em>Sponsor:</em> Ms. Galanos</li>
+    </ul>
 
-    <!-- Navigation -->
-     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.php">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Lectures
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="1920lectures.php">2019-20</a>
-                            <a class="dropdown-item" href="1819lectures.php">2018-19</a>
-                            <a class="dropdown-item" href="1718lectures.php">2017-18</a>
-                            <a class="dropdown-item" href="1617lectures.php">2016-17</a>
-                            <a class="dropdown-item" href="1516lectures.php">2015-16</a>
-                            <a class="dropdown-item" href="otherlectures.php">Older Lectures</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="schedule.php">Schedule</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            History
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="1920history.php">2019-20</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://activities.tjhsst.edu/tjioi" target="_blank">TJ IOI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="links.php">Links</a>
-                    </li>
-                
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <h4>2016-17</h4>
+    <ul>
+        <li><em>Captain:</em> Kevin Geng</li>
+        <li><em>Co-captain:</em> Lawrence Wang</li>
+        <li><em>Co-captain:</em> Charles Zhao</li>
+        <li><em>Statistician:</em> Justin Zhang</li>
+        <li><em>Sponsor:</em> Mr. Rudwick</li>
+    </ul>
 
-    <!-- Page Header -->
-    <header class="masthead" style="background-image: url('/sct/static/img/about.jpg')">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="page-heading">
-                        <h1>What is SCT?</h1>
-                        <!--<span class="subheading">Not</span> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <h4>2015-16</h4>
+    <ul>
+        <li><em>Captain:</em> Nate Foss</li>
+        <li><em>Co-captain:</em> Samuel Hsiang</li>
+        <li><em>Co-captain:</em> Ashley Kim</li>
+        <li><em>Statistician:</em> Jason Lam</li>
+        <li><em>Sponsor:</em> Mr. Rudwick</li>
+    </ul>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <p><strong>Senior Computer Team</strong> is an 8th period club at TJ that holds lectures and practice contests throughout the year. The lectures are primarily geared towards preparing for USACO contests. Specifically, beginner lectures are targeted for the Silver division, and advanced lectures are targeted at the Gold and Platinum divisions. Make sure you sign up for the mailing list or join the Facebook group to stay up-to-date!</p>
-                <p>Although SCT does select teams to travel contests every year, the main focus is USACO, which is an individual contest. Because of the format of the club, the concept of "membership" in SCT isn't really a thing. Don't be afraid to stop by, even if you've never come before! And no, you don't have to be a senior: the only restriction on grade level is that freshmen may not travel with SCT.</p>
-                <p>You should also consider attending SCT's sister clubs: the <a href="https://activities.tjhsst.edu/ict/"><strong>Intermediate Computer Team (ICT)</strong></a> and the <strong>Freshman Computer Team (FCT)</strong>, also known as the Frosh 'Puter Team. The focus of those clubs is slightly different, concentrating more on ACSL, though they also travel to some of the same competitions.</p>
+    <h4>2014-15</h4>
+    <ul>
+        <li><em>Captain:</em> Hariank Muthakana</li>
+        <li><em>Co-captain:</em> Matthew Savage</li>
+        <li><em>Co-captain:</em> Corwin de Boor</li>
+        <li><em>Statistician:</em> Ethan Lowman</li>
+        <li><em>Sponsor:</em> Mr. Rudwick</li>
+    </ul>
 
-                <h3>Officers</h3>
+    <h4>2013-14</h4>
+    <ul>
+        <li><em>Captain:</em> Sreenath Are</li>
+        <li><em>Co-captain:</em> Yongkoo Kang</li>
+        <li><em>Co-captain:</em> Ryan Jian</li>
+        <li><em>Statistician:</em> Abi Gopal</li>
+        <li><em>Sponsor:</em> Ms. Kim</li>
+    </ul>
 
-                <h4>Current (2019-20)</h4>
-                <ul>
-                    <li><em>Captain:</em><a href="mailto:2020rzhan@tjhsst.edu"> Richard Zhan</a></li>
-                    <li><em>Co-captain:</em> <a href="mailto:2020nkoppara@tjhsst.edu">Neeyanth Kopparapu</a></li>
-                    <li><em>Co-captain:</em> <a href="mailto:2020pzhang@tjhsst.edu">Patrick Zhang</a></li>
-                    <li><em>Statistician:</em><a href="mailto:2020hmalladi@tjhsst.edu"> Havish Malladi</a></li>
-                    <li><em>Sponsor:</em> Mr. Eckel</li>
-                </ul>
+    <h4>2012-13</h4>
+    <ul>
+        <li><em>Captain:</em> Nick Haliday</li>
+        <li><em>Co-captain:</em> Ryan Jian</li>
+        <li><em>Co-captain:</em> Owen Hoffman</li>
+        <li><em>Statistician:</em> Eric Tao</li>
+        <li><em>Sponsor:</em> Ms. Kim</li>
+    </ul>
 
-                <p>Senior Computer Team has a long history at TJHSST. Below is a list of its officers and sponsors reaching back through the 1996-97 school year, compiled by spelunking through the Wayback Machine.</p>
+    <h4>2011-12</h4>
+    <ul>
+        <li><em>Captain:</em> Alex Chen</li>
+        <li><em>Co-captain:</em> Saketh Are</li>
+        <li><em>Co-captain:</em> Albert Gural</li>
+        <li><em>Statistician:</em> Aziz Yusupov</li>
+        <li><em>Sponsor:</em> Ms. Kim</li>
+    </ul>
 
-                <details>
-                    <summary>Past officers</summary>
+    <h4>2010-11</h4>
+    <ul>
+        <li><em>Captain:</em> Andre Kessler</li>
+        <li><em>Co-captain:</em> Saketh Are</li>
+        <li><em>Co-captain:</em> Andrew Cheong</li>
+        <li><em>Statistician:</em> Arjun Srinivasan</li>
+        <li><em>Sponsor:</em> Ms. Drobnis</li>
+    </ul>
 
-                    <h4>2018-19</h4>
-                    <ul>
-                        <li><em>Captain:</em> Daniel Wisdom</li>
-                        <li><em>Co-captain:</em> Jongwan Kim</li>
-                        <li><em>Co-captain:</em> George Tang</li>
-                        <li><em>Statistician:</em> Charlie Gunn</li>
-                        <li><em>Sponsor:</em> Ms. Galanos</li>
-                    </ul>
+    <h4>2009-10</h4>
+    <ul>
+        <li><em>Captain:</em> Brian Hamrick</li>
+        <li><em>Co-captain:</em> Jack Chen</li>
+        <li><em>Co-captain:</em> Andre Kessler</li>
+        <li><em>Statistician:</em> Sam Rush</li>
+        <li><em>Sponsor:</em> Mr. Torbert</li>
+    </ul>
 
-                    <h4>2017-18</h4>
-                    <ul>
-                        <li><em>Captain:</em> Justin Zhang</li>
-                        <li><em>Co-captain:</em> Mihir Patel</li>
-                        <li><em>Co-captain:</em> Daniel Wisdom</li>
-                        <li><em>Statistician:</em> Srinidhi Krishnamurthy</li>
-                        <li><em>Sponsor:</em> Ms. Galanos</li>
-                    </ul>
+    <h4>2008-09</h4>
+    <ul>
+        <li><em>Captain:</em> Stephen Drodge</li>
+        <li><em>Co-captain:</em> Brian Hamrick</li>
+        <li><em>Co-captain:</em> Andrew Rodriguez</li>
+        <li><em>Statistician:</em> Keeyoung Lee</li>
+        <li><em>Sponsor:</em> Mr. Torbert</li>
+    </ul>
 
-                    <h4>2016-17</h4>
-                    <ul>
-                        <li><em>Captain:</em> Kevin Geng</li>
-                        <li><em>Co-captain:</em> Lawrence Wang</li>
-                        <li><em>Co-captain:</em> Charles Zhao</li>
-                        <li><em>Statistician:</em> Justin Zhang</li>
-                        <li><em>Sponsor:</em> Mr. Rudwick</li>
-                    </ul>
+    <h4>2007-08</h4>
+    <ul>
+        <li><em>Captain:</em> Jacob Steinhardt</li>
+        <li><em>Co-captain:</em> Jeff Chen</li>
+        <li><em>Co-captain:</em> Haitao Mao</li>
+        <li><em>Statistician:</em> Andrew Rodriguez</li>
+        <li><em>Sponsor:</em> Mr. Torbert</li>
+    </ul>
 
-                    <h4>2015-16</h4>
-                    <ul>
-                        <li><em>Captain:</em> Nate Foss</li>
-                        <li><em>Co-captain:</em> Samuel Hsiang</li>
-                        <li><em>Co-captain:</em> Ashley Kim</li>
-                        <li><em>Statistician:</em> Jason Lam</li>
-                        <li><em>Sponsor:</em> Mr. Rudwick</li>
-                    </ul>
+    <h4>2006-07</h4>
+    <ul>
+        <li><em>Captain:</em> Tom Morgan</li>
+        <li><em>Co-captain:</em> Jonathan Wang</li>
+        <li><em>Co-captain:</em> Jacob Steinhardt</li>
+        <li><em>Statistician:</em> Jeff Chen</li>
+        <li><em>Sponsor:</em> Mr. Torbert</li>
+    </ul>
 
-                    <h4>2014-15</h4>
-                    <ul>
-                        <li><em>Captain:</em> Hariank Muthakana</li>
-                        <li><em>Co-captain:</em> Matthew Savage</li>
-                        <li><em>Co-captain:</em> Corwin de Boor</li>
-                        <li><em>Statistician:</em> Ethan Lowman</li>
-                        <li><em>Sponsor:</em> Mr. Rudwick</li>
-                    </ul>
+    <h4>2005-06</h4>
+    <ul>
+        <li><em>Captain:</em> Justin Solomon</li>
+        <li><em>Co-captain:</em> Nadeem Kolia</li>
+        <li><em>Co-captain:</em> Tom Morgan</li>
+        <li><em>Statistician:</em> Thomas Hsu</li>
+        <li><em>Sponsor:</em> Ms. Little</li>
+    </ul>
 
-                    <h4>2013-14</h4>
-                    <ul>
-                        <li><em>Captain:</em> Sreenath Are</li>
-                        <li><em>Co-captain:</em> Yongkoo Kang</li>
-                        <li><em>Co-captain:</em> Ryan Jian</li>
-                        <li><em>Statistician:</em> Abi Gopal</li>
-                        <li><em>Sponsor:</em> Ms. Kim</li>
-                    </ul>
+    <h4>2004-05</h4>
+    <ul>
+        <li><em>Captain:</em> Michael Druker</li>
+        <li><em>Co-captain:</em> Anthony Kim</li>
+        <li><em>Co-captain:</em> Menyoung Lee</li>
+        <li><em>Statistician:</em> Nadeem Kolia</li>
+        <li><em>Sponsor:</em> Ms. Little</li>
+    </ul>
 
-                    <h4>2012-13</h4>
-                    <ul>
-                        <li><em>Captain:</em> Nick Haliday</li>
-                        <li><em>Co-captain:</em> Ryan Jian</li>
-                        <li><em>Co-captain:</em> Owen Hoffman</li>
-                        <li><em>Statistician:</em> Eric Tao</li>
-                        <li><em>Sponsor:</em> Ms. Kim</li>
-                    </ul>
+    <h4>2003-04</h4>
+    <ul>
+        <li><em>Captain:</em> Evan Danaher</li>
+        <li><em>Co-captain:</em> Brian Jacokes</li>
+        <li><em>Co-captain:</em> Eric Price</li>
+        <li><em>Statistician:</em> Rocco Repetski</li>
+        <li><em>Sponsor:</em> Ms. Little</li>
+    </ul>
 
-                    <h4>2011-12</h4>
-                    <ul>
-                        <li><em>Captain:</em> Alex Chen</li>
-                        <li><em>Co-captain:</em> Saketh Are</li>
-                        <li><em>Co-captain:</em> Albert Gural</li>
-                        <li><em>Statistician:</em> Aziz Yusupov</li>
-                        <li><em>Sponsor:</em> Ms. Kim</li>
-                    </ul>
+    <h4>2002-03</h4>
+    <ul>
+        <li><em>Captain:</em> Jeff Arnold</li>
+        <li><em>Co-captain:</em> Tim Abbott</li>
+        <li><em>Co-captain:</em> Brian Jacokes</li>
+        <li><em>Statistician:</em> Samarth Keshava</li>
+        <li><em>Sponsor:</em> Ms. Little</li>
+    </ul>
 
-                    <h4>2010-11</h4>
-                    <ul>
-                        <li><em>Captain:</em> Andre Kessler</li>
-                        <li><em>Co-captain:</em> Saketh Are</li>
-                        <li><em>Co-captain:</em> Andrew Cheong</li>
-                        <li><em>Statistician:</em> Arjun Srinivasan</li>
-                        <li><em>Sponsor:</em> Ms. Drobnis</li>
-                    </ul>
+    <h4>2001-02</h4>
+    <ul>
+        <li><em>Captain:</em> Steven Sivek</li>
+        <li><em>Co-captain:</em> Kevin Caffrey</li>
+        <li><em>Co-captain:</em> Jeff Arnold</li>
+        <li><em>Statistician:</em> Gary Sivek</li>
+        <li><em>Sponsor:</em> Ms. Little</li>
+    </ul>
 
-                    <h4>2009-10</h4>
-                    <ul>
-                        <li><em>Captain:</em> Brian Hamrick</li>
-                        <li><em>Co-captain:</em> Jack Chen</li>
-                        <li><em>Co-captain:</em> Andre Kessler</li>
-                        <li><em>Statistician:</em> Sam Rush</li>
-                        <li><em>Sponsor:</em> Mr. Torbert</li>
-                    </ul>
+    <h4>2000-01</h4>
+    <ul>
+        <li><em>Captain:</em> Vladimir Novakovski</li>
+        <li><em>Senior co-captain:</em> Ilia Mirkin</li>
+        <li><em>Junior co-captain:</em> Gregory N. Price</li>
+        <li><em>Statistician:</em> Gary Sivek</li>
+        <li><em>Sponsors:</em> Ms. Little and Mr. Latimer</li>
+    </ul>
 
-                    <h4>2008-09</h4>
-                    <ul>
-                        <li><em>Captain:</em> Stephen Drodge</li>
-                        <li><em>Co-captain:</em> Brian Hamrick</li>
-                        <li><em>Co-captain:</em> Andrew Rodriguez</li>
-                        <li><em>Statistician:</em> Keeyoung Lee</li>
-                        <li><em>Sponsor:</em> Mr. Torbert</li>
-                    </ul>
+    <h4>1999-00</h4>
+    <ul>
+        <li><em>Captain:</em> Dan Willenson</li>
+        <li><em>Senior co-captain:</em> John Danaher</li>
+        <li><em>Junior co-captain:</em> Ilia Mirkin</li>
+        <li><em>Statistician:</em> Michael Connor</li>
+        <li><em>Sponsor:</em> Ms. Bellacqua</li>
+    </ul>
 
-                    <h4>2007-08</h4>
-                    <ul>
-                        <li><em>Captain:</em> Jacob Steinhardt</li>
-                        <li><em>Co-captain:</em> Jeff Chen</li>
-                        <li><em>Co-captain:</em> Haitao Mao</li>
-                        <li><em>Statistician:</em> Andrew Rodriguez</li>
-                        <li><em>Sponsor:</em> Mr. Torbert</li>
-                    </ul>
+    <h4>1998-99</h4>
+    <ul>
+        <li><em>Captain:</em> Dan Ceperly</li>
+        <li><em>Senior co-captain:</em> Andrew Hayes</li>
+        <li><em>Junior co-captain:</em> John Danaher</li>
+        <li><em>Statisticians:</em> Mike Craig and Dan Willenson</li>
+        <li><em>Sponsor:</em> Ms. Bellacqua</li>
+    </ul>
 
-                    <h4>2006-07</h4>
-                    <ul>
-                        <li><em>Captain:</em> Tom Morgan</li>
-                        <li><em>Co-captain:</em> Jonathan Wang</li>
-                        <li><em>Co-captain:</em> Jacob Steinhardt</li>
-                        <li><em>Statistician:</em> Jeff Chen</li>
-                        <li><em>Sponsor:</em> Mr. Torbert</li>
-                    </ul>
+    <h4>1997-98</h4>
+    <ul>
+        <li><em>Captain:</em> Sean MacIsaac</li>
+        <li><em>Senior co-captain:</em> Tom Dixon</li>
+        <li><em>Junior co-captain:</em> Ben Byer</li>
+        <li><em>Statistician:</em> Alok Bhushan</li>
+        <li><em>Sponsor:</em> Ms. Bellacqua</li>
+    </ul>
 
-                    <h4>2005-06</h4>
-                    <ul>
-                        <li><em>Captain:</em> Justin Solomon</li>
-                        <li><em>Co-captain:</em> Nadeem Kolia</li>
-                        <li><em>Co-captain:</em> Tom Morgan</li>
-                        <li><em>Statistician:</em> Thomas Hsu</li>
-                        <li><em>Sponsor:</em> Ms. Little</li>
-                    </ul>
+    <h4>1996-97</h4>
+    <ul>
+        <li><em>Captain:</em> Nick Allen</li>
+        <li><em>Senior co-captain:</em> Andy Berkheimer</li>
+        <li><em>Junior co-captain:</em> Sean MacIsaac</li>
+        <li><em>Statistician:</em> Peter Shin</li>
+        <li><em>Sponsors:</em> Ms. Bellacqua and Ms. Baker</li>
+    </ul>
 
-                    <h4>2004-05</h4>
-                    <ul>
-                        <li><em>Captain:</em> Michael Druker</li>
-                        <li><em>Co-captain:</em> Anthony Kim</li>
-                        <li><em>Co-captain:</em> Menyoung Lee</li>
-                        <li><em>Statistician:</em> Nadeem Kolia</li>
-                        <li><em>Sponsor:</em> Ms. Little</li>
-                    </ul>
+</details>
 
-                    <h4>2003-04</h4>
-                    <ul>
-                        <li><em>Captain:</em> Evan Danaher</li>
-                        <li><em>Co-captain:</em> Brian Jacokes</li>
-                        <li><em>Co-captain:</em> Eric Price</li>
-                        <li><em>Statistician:</em> Rocco Repetski</li>
-                        <li><em>Sponsor:</em> Ms. Little</li>
-                    </ul>
+<h3>Competitions</h3>
 
-                    <h4>2002-03</h4>
-                    <ul>
-                        <li><em>Captain:</em> Jeff Arnold</li>
-                        <li><em>Co-captain:</em> Tim Abbott</li>
-                        <li><em>Co-captain:</em> Brian Jacokes</li>
-                        <li><em>Statistician:</em> Samarth Keshava</li>
-                        <li><em>Sponsor:</em> Ms. Little</li>
-                    </ul>
+<h4>USACO (USA Computing Olympiad)</h4>
+<p>USACO is a nationwide online contest, around which the SCT curriculum is based. As a result, although USACO is an individual contest, we strongly encourage members to participate!</p>
+<p>Monthly contests are administered online in December, January, and February. The final and most difficult contest is the US Open, which is accompanied by an extended time limit. At the end of the year, around 25 students from the USA are choosen to go to USACO Training Camp, of which four are then are selected to compete in the Internationial Olympiad in Informatics (IOI). Getting to USACO Training Camp is a great achievement and is what every SCT member should strive for individually.</p>
+<p>For more information about USACO, or to register, visit <a href="http://usaco.org">usaco.org</a>. At that link, you will also find the Training Pages, which are a good resource, albeit a bit dated. You'll also find problems for past contests, which are extremely useful for preparation.</p>
 
-                    <h4>2001-02</h4>
-                    <ul>
-                        <li><em>Captain:</em> Steven Sivek</li>
-                        <li><em>Co-captain:</em> Kevin Caffrey</li>
-                        <li><em>Co-captain:</em> Jeff Arnold</li>
-                        <li><em>Statistician:</em> Gary Sivek</li>
-                        <li><em>Sponsor:</em> Ms. Little</li>
-                    </ul>
+<h4>Travel contests</h4>
+<p>Every spring, the ACM chapters at three local universities host programming contests for high school students. Each of the contests has around 9&ndash;12 problems, and uses ACM-style scoring: scores are determined by the number of problems solved, and ties are broken by penalty time. SCT sends a team of four members to all three of these contests every year, determined through a selection process.</p>
 
-                    <h4>2000-01</h4>
-                    <ul>
-                        <li><em>Captain:</em> Vladimir Novakovski</li>
-                        <li><em>Senior co-captain:</em> Ilia Mirkin</li>
-                        <li><em>Junior co-captain:</em> Gregory N. Price</li>
-                        <li><em>Statistician:</em> Gary Sivek</li>
-                        <li><em>Sponsors:</em> Ms. Little and Mr. Latimer</li>
-                    </ul>
+<ul>
+    <li><a href="http://www.egr.vcu.edu/departments/computer/about/high-school-programming-contest/">Virginia Commonwealth University (VCU)</a> &mdash; Both SCT and ICT attend. The contest length is 3 hours, and only Java is allowed.</li>
+    <li><a href="http://www.cs.umd.edu/Outreach/hsContest.shtml">University of Maryland (UMD)</a> &mdash; Only SCT attends this contest. The contest length is 3 hours, and only Java is allowed.</li>
+    <li><a href="http://acm.cs.virginia.edu/hspc.php">University of Virginia (UVA)</a> &mdash; FCT, ICT, and SCT all attend. The contest length is 4 hours, and Java, C, or C++ are permitted.</li>
+</ul>
 
-                    <h4>1999-00</h4>
-                    <ul>
-                        <li><em>Captain:</em> Dan Willenson</li>
-                        <li><em>Senior co-captain:</em> John Danaher</li>
-                        <li><em>Junior co-captain:</em> Ilia Mirkin</li>
-                        <li><em>Statistician:</em> Michael Connor</li>
-                        <li><em>Sponsor:</em> Ms. Bellacqua</li>
-                    </ul>
+<h4>Other local contests</h4>
+<p>The following contests, however, do not have a team registration limit; you may therefore form teams on your own, and no selection process is necessary. The number of problems and scoring system is similar.</p>
 
-                    <h4>1998-99</h4>
-                    <ul>
-                        <li><em>Captain:</em> Dan Ceperly</li>
-                        <li><em>Senior co-captain:</em> Andrew Hayes</li>
-                        <li><em>Junior co-captain:</em> John Danaher</li>
-                        <li><em>Statisticians:</em> Mike Craig and Dan Willenson</li>
-                        <li><em>Sponsor:</em> Ms. Bellacqua</li>
-                    </ul>
+<ul>
+    <li><a href="http://pclassic.org">PClassic</a> &mdash; This contest takes place every fall (November) and spring (April) at the University of Pennsylvania. You may form teams of up to four, in either the novice or standard divisions. The contest length is 4 hours, and the programming language is Java or Python. (Most of the time, TJ will not officially send teams; i.e. with a teacher. You can, however, register your own team as "Unaffiliated from VA".)</li>
+    <li><a href="https://icpc.cs.vt.edu/#/hscontest">Virginia Tech</a> &mdash; This contest takes place in early December, and is taken online at TJ by members from all of the computer teams. You may form teams of up to <strong>three</strong>. The contest length is 4 hours, and the programming language is Java, Python, C, or C++.</li>
+</ul>
 
-                    <h4>1997-98</h4>
-                    <ul>
-                        <li><em>Captain:</em> Sean MacIsaac</li>
-                        <li><em>Senior co-captain:</em> Tom Dixon</li>
-                        <li><em>Junior co-captain:</em> Ben Byer</li>
-                        <li><em>Statistician:</em> Alok Bhushan</li>
-                        <li><em>Sponsor:</em> Ms. Bellacqua</li>
-                    </ul>
+<h4>Online contests</h4>
+<p>We also encourage you to participate in other online contests on your own, in particular the following:</p>
 
-                    <h4>1996-97</h4>
-                    <ul>
-                        <li><em>Captain:</em> Nick Allen</li>
-                        <li><em>Senior co-captain:</em> Andy Berkheimer</li>
-                        <li><em>Junior co-captain:</em> Sean MacIsaac</li>
-                        <li><em>Statistician:</em> Peter Shin</li>
-                        <li><em>Sponsors:</em> Ms. Bellacqua and Ms. Baker</li>
-                    </ul>
+<ul>
+    <li><a href="https://code.google.com/codejam/">Google Code Jam</a> begins around April.</li>
+    <li><a href="https://www.facebook.com/hackercup/">Facebook Hacker Cup</a> begins around January.</li>
+    <li><a href="http://codeforces.com/">Codeforces</a> holds regular competitions.</li>
+</ul>
 
-                </details>
+<p>For a more extensive list, check out USACO's <a href="http://usaco.org/index.php?page=resources">Resources</a> page.</p>
 
-                <h3>Competitions</h3>
+<!--
+<h4>IPSC (Internet Problem Solving Contest)</h4>
+<p>IPSC is a 5 hour contest taken in May or June, in which teams of up to 3 people have to solve 8 problems or so using math, logic, and programming skills.  This is a lot of fun and was once taken in school.</p>
 
-                <h4>USACO (USA Computing Olympiad)</h4>
-                <p>USACO is a nationwide online contest, around which the SCT curriculum is based. As a result, although USACO is an individual contest, we strongly encourage members to participate!</p>
-                <p>Monthly contests are administered online in December, January, and February. The final and most difficult contest is the US Open, which is accompanied by an extended time limit. At the end of the year, around 25 students from the USA are choosen to go to USACO Training Camp, of which four are then are selected to compete in the Internationial Olympiad in Informatics (IOI). Getting to USACO Training Camp is a great achievement and is what every SCT member should strive for individually.</p>
-                <p>For more information about USACO, or to register, visit <a href="http://usaco.org">usaco.org</a>. At that link, you will also find the Training Pages, which are a good resource, albeit a bit dated. You'll also find problems for past contests, which are extremely useful for preparation.</p>
+<h4>TopCoder Open and TopCoder High School</h4>
+<p class="comp">TopCoder is another online competition, similar to USACO.  Competitors are typically given three problems, each worth a different value of points.  He/She will join a room with other people of relatively similar ratings, and have 1 hr 15 mins to complete the problems.  After coding, the user may choose to continue to challenge phase, in which the user may view his/her opponent's source code and submit test cases.  If the opponent's program fails to correctly input the solution, the challenger gains extra points.</p>
+-->
 
-                <h4>Travel contests</h4>
-                <p>Every spring, the ACM chapters at three local universities host programming contests for high school students. Each of the contests has around 9&ndash;12 problems, and uses ACM-style scoring: scores are determined by the number of problems solved, and ties are broken by penalty time. SCT sends a team of four members to all three of these contests every year, determined through a selection process.</p>
+<h3>Miscellaneous</h3>
+<h4>Guest lectures and elections</h4>
+<p>In late spring, after the US Open contest, SCT transitions to guest lectures. These allow any student to sign up to lecture at SCT. The topics are generally focused on the same type of algorithmic content covered throughout the rest of the year, but can be on anything tangentially related to algorithms as long as it's interesting! Guest lectures are required for those running for an elected position.</p>
+<p>At the end of the year, members elect three officer positions: one captain and two co-captains, based on the number of votes received, and the restriction that you may not lead another club at the same time as SCT. The final position, the statistician, is appointed by the newly elected captains in whatever manner they wish.</p>
 
-                <ul>
-                    <li><a href="http://www.egr.vcu.edu/departments/computer/about/high-school-programming-contest/">Virginia Commonwealth University (VCU)</a> &mdash; Both SCT and ICT attend. The contest length is 3 hours, and only Java is allowed.</li>
-                    <li><a href="http://www.cs.umd.edu/Outreach/hsContest.shtml">University of Maryland (UMD)</a> &mdash; Only SCT attends this contest. The contest length is 3 hours, and only Java is allowed.</li>
-                    <li><a href="http://acm.cs.virginia.edu/hspc.php">University of Virginia (UVA)</a> &mdash; FCT, ICT, and SCT all attend. The contest length is 4 hours, and Java, C, or C++ are permitted.</li>
-                </ul>
+<h4>Computer science clubs</h4>
+<p>For better or for worse, TJ has a <em>lot</em> of clubs related to computer science! Here's a list of clubs that should be accurate, as of the 2020-21 school year. This isn't even counting more tangentially related clubs such as robotics, TSA, or sysadmins.</p>
+<ul>
+    <li><a href="https://activities.tjhsst.edu/sct/">Senior Computer Team</a> (Eckel; Friday A)</li>
+    <li><a href="https://activities.tjhsst.edu/ict/">Intermediate Computer Team</a> (Kim; Friday B)</li>
+    <li>Freshman Computer Team (Rose; Friday A)</li>
+    <li><a href="https://tjdev.club/">Dev Club</a> (Billington; Wednesday B)</li>
+    <li>Mobile Apps Club (Gabor; Wednesday A)</li>
+    <li><a href="https://tjclc.wordpress.com/">Coding Lady Colonials</a> (Tra; Friday A)</li>
+    <li><a href="http://tjmachinelearning.com/">Machine Learning Club</a> (Jurj; Wednesday A)</li>
+    <li><a href="https://activities.tjhsst.edu/csc/">Computer Security Club</a> (Zacharias; Wednesday A &amp; B)</li>
+    <li><a href="https://activities.tjhsst.edu/tjcompvision/">Computer Vision Club</a> (Gabor; Wednesday B)</li>
+</ul>
+{% endblock %}
 
-                <h4>Other local contests</h4>
-                <p>The following contests, however, do not have a team registration limit; you may therefore form teams on your own, and no selection process is necessary. The number of problems and scoring system is similar.</p>
-
-                <ul>
-                    <li><a href="http://pclassic.org">PClassic</a> &mdash; This contest takes place every fall (November) and spring (April) at the University of Pennsylvania. You may form teams of up to four, in either the novice or standard divisions. The contest length is 4 hours, and the programming language is Java or Python. (Most of the time, TJ will not officially send teams; i.e. with a teacher. You can, however, register your own team as "Unaffiliated from VA".)</li>
-                    <li><a href="https://icpc.cs.vt.edu/#/hscontest">Virginia Tech</a> &mdash; This contest takes place in early December, and is taken online at TJ by members from all of the computer teams. You may form teams of up to <strong>three</strong>. The contest length is 4 hours, and the programming language is Java, Python, C, or C++.</li>
-                </ul>
-
-                <h4>Online contests</h4>
-                <p>We also encourage you to participate in other online contests on your own, in particular the following:</p>
-
-                <ul>
-                    <li><a href="https://code.google.com/codejam/">Google Code Jam</a> begins around April.</li>
-                    <li><a href="https://www.facebook.com/hackercup/">Facebook Hacker Cup</a> begins around January.</li>
-                    <li><a href="http://codeforces.com/">Codeforces</a> holds regular competitions.</li>
-                </ul>
-
-                <p>For a more extensive list, check out USACO's <a href="http://usaco.org/index.php?page=resources">Resources</a> page.</p>
-
-                <!--
-                <h4>IPSC (Internet Problem Solving Contest)</h4>
-                <p>IPSC is a 5 hour contest taken in May or June, in which teams of up to 3 people have to solve 8 problems or so using math, logic, and programming skills.  This is a lot of fun and was once taken in school.</p>
-
-                <h4>TopCoder Open and TopCoder High School</h4>
-                <p class="comp">TopCoder is another online competition, similar to USACO.  Competitors are typically given three problems, each worth a different value of points.  He/She will join a room with other people of relatively similar ratings, and have 1 hr 15 mins to complete the problems.  After coding, the user may choose to continue to challenge phase, in which the user may view his/her opponent's source code and submit test cases.  If the opponent's program fails to correctly input the solution, the challenger gains extra points.</p>
-                -->
-
-
-
-
-                <h3>Miscellaneous</h3>
-                <h4>Guest lectures and elections</h4>
-                <p>In late spring, after the US Open contest, SCT transitions to guest lectures. These allow any student to sign up to lecture at SCT. The topics are generally focused on the same type of algorithmic content covered throughout the rest of the year, but can be on anything tangentially related to algorithms as long as it's interesting! Guest lectures are required for those running for an elected position.</p>
-                <p>At the end of the year, members elect three officer positions: one captain and two co-captains, based on the number of votes received, and the restriction that you may not lead another club at the same time as SCT. The final position, the statistician, is appointed by the newly elected captains in whatever manner they wish.</p>
-
-                <h4>Computer science clubs</h4>
-                <p>For better or for worse, TJ has a <em>lot</em> of clubs related to computer science! Here's a list of clubs that should be accurate, as of the 2019-20 school year. This isn't even counting more tangentially related clubs such as robotics, TSA, or sysadmins.</p>
-                <ul>
-                    <li><a href="https://activities.tjhsst.edu/sct/">Senior Computer Team</a> (Eckel; Friday A)</li>
-                    <li><a href="https://activities.tjhsst.edu/ict/">Intermediate Computer Team</a> (Kim; Friday B)</li>
-                    <li>Freshman Computer Team (Rose; Friday A)</li>
-                    <li><a href="https://tjdev.club/">Dev Club</a> (Billington; Wednesday B)</li>
-                    <li>Mobile Apps Club (Gabor; Wednesday A)</li>
-                    <li><a href="https://tjclc.wordpress.com/">Coding Lady Colonials</a> (Tra; Friday A)</li>
-                    <li><a href="http://tjmachinelearning.com/">Machine Learning Club</a> (Jurj; Wednesday A)</li>
-                    <li><a href="https://activities.tjhsst.edu/csc/">Computer Security Club</a> (Zacharias; Wednesday A &amp; B)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="https://www.facebook.com/groups/tjsct/">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://github.com/tjsct">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Havish Malladi 2020</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="/sct/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/sct/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="/sct/static/js/clean-blog.min.js"></script>
-
-</body>
-
-</html>
