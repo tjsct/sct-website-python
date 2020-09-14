@@ -1,0 +1,6 @@
+# package list for Director 4
+# right click at the bottom of files pane to see log
+# first few packages are for webmaster convenience only
+# py3-setproctitle doesn't work 
+# Python 3.8 (Alpine)
+fish bash tmux ranger vim fzf ncdu w3m curl gnupg git npm py3-gunicorn py3-gevent
