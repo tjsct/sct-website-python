@@ -25,43 +25,43 @@ lectures_by_year = util.get_lectures_by_year()
 def home():
     return render_template(f"index{FILE}")
 
-@app.route("/about.php")
+@app.route("/about")
 def about():
     return render_template(f"about{FILE}")
 
-@app.route("/schedule.php")
+@app.route("/schedule")
 def schedule():
     return render_template(f"schedule{FILE}")
 
-@app.route("/links.php")
+@app.route("/links")
 def links():
     return render_template(f"links{FILE}")
 
-@app.route("/1920lectures.php")
+@app.route("/1920lectures")
 def lectures_6():
     return render_template(f"lectures{FILE}",lectures_by_year = {"2019-20":lectures_by_year["2019-20"]})
 
-@app.route("/1819lectures.php")
+@app.route("/1819lectures")
 def lectures_1():
     return render_template(f"lectures{FILE}",lectures_by_year = {"2018-19":lectures_by_year["2018-19"]})
 
-@app.route("/1718lectures.php")
+@app.route("/1718lectures")
 def lectures_2():
     return render_template(f"lectures{FILE}",lectures_by_year = {"2017-18":lectures_by_year["2017-18"]})
 
-@app.route("/1617lectures.php")
+@app.route("/1617lectures")
 def lectures_3():
     return render_template(f"lectures{FILE}",lectures_by_year = {"2016-17":lectures_by_year["2016-17"]})
 
-@app.route("/1516lectures.php")
+@app.route("/1516lectures")
 def lectures_4():
     return render_template(f"lectures{FILE}",lectures_by_year = {"2015-16":lectures_by_year["2015-16"]})
 
-@app.route("/1920history.php")
+@app.route("/1920history")
 def history1920():
 	return render_template(f"1920history{FILE}")
 
-@app.route("/otherlectures.php")
+@app.route("/otherlectures")
 def lectures_5():
     used_keys = ["2019-20","2018-19", "2017-18", "2016-17","2015-16"]
     temp_dict = {}
@@ -72,11 +72,11 @@ def lectures_5():
             lectures_by_year=collections.OrderedDict(sorted(temp_dict.items(), reverse=True)))
 
 # redirects
-@app.route("/index.php")
+@app.route("/index")
 def home2():
     return redirect(url_for("home"))
 
-@app.route("/competitions.php")
+@app.route("/competitions")
 def competitions():
     return redirect(url_for("about"))
 
