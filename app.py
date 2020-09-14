@@ -21,45 +21,28 @@ app.register_blueprint(usaco_scores.app.page, url_prefix="/usaco_scores")
 import util
 lectures_by_year = util.get_lectures_by_year()
 
-@app.route("/")
-def home():
-    return render_template(f"index{FILE}")
+# pages
 
-@app.route("/about")
-def about():
-    return render_template(f"about{FILE}")
+def make_page(url: str, file_name: str, **kwargs: dict) -> None:
+    """ Makes a simple page. """
+    f = lambda: render_template(f"{file_name}{FILE}", **kwargs)
+    # Need distinct function names for Flask not to error
+    f.__name__ = url if url != "" else "index"
+    app.route(f"/{url}")(f)
 
-@app.route("/schedule")
-def schedule():
-    return render_template(f"schedule{FILE}")
+def make_lectures_pages(start: int, end: int) -> None:
+    """ Makes a different handler for each year. """
+    for y in range(start, end + 1):
+        years = f"20{y}-{y + 1}"
+        make_page(f"{y}{y + 1}lectures", "lectures", lectures_by_year={years: lectures_by_year[years]})
 
-@app.route("/links")
-def links():
-    return render_template(f"links{FILE}")
+pages = [("", "index"), ("about", "about"), ("schedule", "schedule"),
+         ("links", "links"), ("1920history", "1920history")
+        ]
+for url, fname in pages:
+    make_page(url, fname)
 
-@app.route("/1920lectures")
-def lectures_6():
-    return render_template(f"lectures{FILE}",lectures_by_year = {"2019-20":lectures_by_year["2019-20"]})
-
-@app.route("/1819lectures")
-def lectures_1():
-    return render_template(f"lectures{FILE}",lectures_by_year = {"2018-19":lectures_by_year["2018-19"]})
-
-@app.route("/1718lectures")
-def lectures_2():
-    return render_template(f"lectures{FILE}",lectures_by_year = {"2017-18":lectures_by_year["2017-18"]})
-
-@app.route("/1617lectures")
-def lectures_3():
-    return render_template(f"lectures{FILE}",lectures_by_year = {"2016-17":lectures_by_year["2016-17"]})
-
-@app.route("/1516lectures")
-def lectures_4():
-    return render_template(f"lectures{FILE}",lectures_by_year = {"2015-16":lectures_by_year["2015-16"]})
-
-@app.route("/1920history")
-def history1920():
-	return render_template(f"1920history{FILE}")
+make_lectures_pages(15, 19)
 
 @app.route("/otherlectures")
 def lectures_5():
@@ -74,7 +57,7 @@ def lectures_5():
 # redirects
 @app.route("/index")
 def home2():
-    return redirect(url_for("home"))
+    return redirect("https://activities.tjhsst.edu/sct/")
 
 @app.route("/competitions")
 def competitions():

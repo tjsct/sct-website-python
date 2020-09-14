@@ -1,7 +1,29 @@
+/* schedule iframe */
+
 iframe {
     width: 1000px;
     height: 800px;
     border: none;
     margin-left: -150px;
+}
+
+/* link formatting */
+
+a {
+    text-decoration: underline;
+    /* color: #007bff */
+    color: #17a2b8;
+}
+
+footer a {
+    color: #212529;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.dropdown-item {
+    text-decoration: none;
 }
 
