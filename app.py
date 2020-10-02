@@ -42,11 +42,11 @@ pages = [("", "index"), ("about", "about"), ("schedule", "schedule"),
 for url, fname in pages:
     make_page(url, fname)
 
-make_lectures_pages(15, 19)
+make_lectures_pages(15, 20)
 
 @app.route("/otherlectures")
 def lectures_5():
-    used_keys = ["2019-20","2018-19", "2017-18", "2016-17","2015-16"]
+    used_keys = ["2020-21", "2019-20","2018-19", "2017-18", "2016-17","2015-16"]
     temp_dict = {}
     for k in lectures_by_year:
         if k not in used_keys:
