@@ -23,7 +23,12 @@ npm install package.json
 ## File Structure
 
 - `files/config.json`: Configuration file which defines variables given to each
-template. Only used parameter is `static`, which gives the static URL (should be
-set to "/sct/static" on the Director site and "/static" when locally testing).
+template. Parameters:
+    - `url`, which is the URL of the site.
+        - "https://activities.tjhsst.edu/sct" on the Director site
+        - "http://127.0.0.1:5000" when locally testing
+    - `static`, which gives the static URL.
+        - "/sct/static" on Director
+        - "/static" locally
 - `templates/helper`: Defines a global header, footer, and base template.
 

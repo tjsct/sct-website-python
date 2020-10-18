@@ -1,4 +1,6 @@
-lectures/
+lectures
+editorials
+
 env/
 *.pyc
 __pycache__

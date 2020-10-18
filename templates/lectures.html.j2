@@ -6,6 +6,7 @@
 
 {% block content %}
 {% for year, lectures in lectures_by_year.items() %}
+{% set path = "{}/lectures/{}{}/".format(url, year[2:4], year[-2:]) %} 
 <div id="index">
     <h4>{{ year }} Lectures </h4>
     <table class="mdl-data-table mdl-js-data-table lectures-table">
@@ -23,7 +24,7 @@
                     {{ f.get(l.formatted_date, "<i>No date</i>") }}
                 </td>
                 <td class="mdl-data-table__cell--non-numeric">
-                    {% if l.link %}<a href="{{ l.link }}">{{ l.title }}</a>
+                    {% if l.filename %}<a href="{{ path + l.filename }}">{{ l.title }}</a>
                     {% else %}<em>{{ l.title }}</em>{% endif %}
                 </td>
                 <td class="mdl-data-table__cell--non-numeric">
