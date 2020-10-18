@@ -46,7 +46,7 @@ make_lectures_pages(15, 20)
 
 @app.route("/otherlectures")
 def lectures_5():
-    used_keys = ["2020-21", "2019-20","2018-19", "2017-18", "2016-17","2015-16"]
+    used_keys = ["2020-21", "2019-20", "2018-19", "2017-18", "2016-17"," 2015-16"]
     temp_dict = {}
     for k in lectures_by_year:
         if k not in used_keys:
@@ -66,7 +66,7 @@ def competitions():
 # serve lecture files
 @app.route("/lectures/<path:path>")
 def lecture_files(path):
-    return send_from_directory("lectures", path)
+    return send_from_directory("lectures/pdfs", path)
 
 if __name__ == "__main__":
     app.run(port=os.getenv("PORT", 5000), host="0.0.0.0", debug=True)

@@ -4,3 +4,5 @@ env/
 __pycache__
 usaco_scores/scores.db
 config.json
+static/node_modules/
+
