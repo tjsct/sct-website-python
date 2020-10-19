@@ -32,6 +32,9 @@ def get_lectures_by_year():
         # make an exception for standard lectures
         if y != "Standard":
             lectures_by_year[y].reverse()
+        else:
+            for l in lectures_by_year[y]:
+                l["filename"] = f"{l['date']}_{l['title'].replace(' ', '_')}.pdf"
 
     # sort by year in reverse chronological order
     return collections.OrderedDict(
