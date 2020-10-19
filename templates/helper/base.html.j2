@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     {% include "helper/header.html.j2" %}
-    <body>
+    <body class="d-flex flex-column"> 
         {% include "helper/nav.html.j2" %}
 
         <!-- Page Header -->
@@ -23,14 +23,12 @@
         </header>
 
         <!-- Main Content -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    {% block content %}
-                    {% endblock %}
-                </div>
+        <main role="main" class="flex-shrink-0">
+            <div class="container">
+                {% block content %}
+                {% endblock %}
             </div>
-        </div>
+        </main>
 
         <hr>
         {% include "helper/footer.html.j2" %}

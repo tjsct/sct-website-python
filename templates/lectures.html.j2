@@ -9,34 +9,38 @@
 {% set path = "{}/lectures/{}{}/".format(url, year[2:4], year[-2:]) %} 
 <div id="index">
     <h4>{{ year }} Lectures </h4>
-    <table class="mdl-data-table mdl-js-data-table lectures-table">
-        <thead>
-            <tr>
-            {% for col in ["Date", "Title", "Level", "Author"] %}
-                <th class="mdl-data-table__cell--non-numeric">{{ col }}</th>
-            {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for l in lectures %}
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">
-                    {{ f.get(l.formatted_date, "<i>No date</i>") }}
-                </td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    {% if l.filename %}<a href="{{ path + l.filename }}">{{ l.title }}</a>
-                    {% else %}<em>{{ l.title }}</em>{% endif %}
-                </td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    {{ f.get(l.level, "<i>No level</i>") }}
-                </td>
-                <td class="mdl-data-table__cell--non-numeric">
-                    {{ f.get(l.author, "<i>No author</i>") }}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-light">
+                <tr>
+                {% for size, col in [("20", "Date"),  ("40", "Title"),
+                                     ("15", "Level"), ("25", "Author")] %}
+                    <th scope="col" style="width: {{ size  }}%!important">{{ col }}</th>
+                {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for l in lectures %}
+                <tr>
+                    <td> 
+                        {{ f.get(l.formatted_date, "<i>No date</i>") }}
+                    </td>
+                    <td> 
+                        {% if l.filename %}<a href="{{ path + l.filename }}">{{ l.title }}</a>
+                        {% else %}<em>{{ l.title }}</em>{% endif %}
+                    </td>
+                    <td> 
+                        {{ f.get(l.level, "<i>No Level</i>") }}
+                    </td>
+                    <td> 
+                        {{ f.get(l.author, "<i>No Author</i>") }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endfor %}
 {% endblock %}
