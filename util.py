@@ -29,13 +29,15 @@ def get_lectures_by_year():
 
     # reverse order of lectures
     for y in lectures_by_year:
-        lectures_by_year[y].reverse()
+        # make an exception for standard lectures
+        if y != "Standard":
+            lectures_by_year[y].reverse()
 
     # sort by year in reverse chronological order
     return collections.OrderedDict(
             sorted(lectures_by_year.items(), reverse=True))
 
-def get_editorials():
+def get_editorials_by_year():
     editorials = {}
     # sort by year in reverse chronological order
     # relies on the implicit insertion order of dictionaries in Python 3
@@ -45,5 +47,10 @@ def get_editorials():
         if year not in editorials:
             editorials[year] = []
         editorials[year].append((contest, file))
+
+    # reverse order of editorials
+    for y in editorials:
+        editorials[y].reverse()
+
     return editorials
 

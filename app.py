@@ -20,6 +20,7 @@ app.register_blueprint(usaco_scores.app.page, url_prefix="/usaco_scores")
 # retrieve lectures on startup
 import util
 lectures_by_year = util.get_lectures_by_year()
+editorials_by_year = util.get_editorials_by_year()
 
 # pages
 
@@ -30,11 +31,12 @@ def make_page(url: str, file_name: str, **kwargs: dict) -> None:
     f.__name__ = url if url != "" else "index"
     app.route(f"/{url}")(f)
 
-def make_lectures_pages(start: int, end: int) -> None:
+def make_lectures_pages(start: int, end: int, folder: str, lectures: dict) -> None:
     """ Makes a different handler for each year. """
     for y in range(start, end + 1):
         years = f"20{y}-{y + 1}"
-        make_page(f"{y}{y + 1}lectures", "lectures", lectures_by_year={years: lectures_by_year[years]})
+        make_page(f"{y}{y + 1}{folder}", folder,
+                  **{f"{folder}_by_year": {years: lectures[years]}})
 
 pages = [("", "index"), ("about", "about"), ("schedule", "schedule"),
          ("links", "links"), ("1920history", "1920history")
@@ -42,13 +44,15 @@ pages = [("", "index"), ("about", "about"), ("schedule", "schedule"),
 for url, fname in pages:
     make_page(url, fname)
 
-make_lectures_pages(20, 20)
+make_lectures_pages(20, 20, "lectures", lectures_by_year)
 # standard lectures page
-make_page(f"standard-lectures", "lectures",
+make_page("standard-lectures", "lectures",
           lectures_by_year={"Standard": lectures_by_year["Standard"]})
+# editorials
+make_page("editorials", "editorials", editorials_by_year=editorials_by_year)
 
 @app.route("/otherlectures")
-def lectures_5():
+def other_lectures():
     used_keys = {"Standard", "2020-21"}
     temp_dict = {}
     for k in lectures_by_year:
@@ -70,6 +74,10 @@ def competitions():
 @app.route("/lectures/<path:path>")
 def lecture_files(path):
     return send_from_directory("lectures/pdfs", path)
+
+@app.route("/editorials/<path:path>")
+def editorials_files(path):
+    return send_from_directory("editorials", path)
 
 if __name__ == "__main__":
     app.run(port=os.getenv("PORT", 5000), host="0.0.0.0", debug=True)

@@ -1,0 +1,43 @@
+{% extends "helper/base.html.j2" %}
+
+{% block title %}Editorials{% endblock %}
+{% block subtitle %}{% endblock %}
+{% block image %}lectures.jpg{% endblock %}
+
+{% block content %}
+<p> Editorials can also be found on our
+<a href="https://github.com/tjsct/editorials">GitHub</a>,
+along with
+<a href="https://github.com/tjsct/lectures">lectures</a>. <br>
+Note that some example solutions can only be found on the GitHub. </p>
+{% for year, editorials in editorials_by_year.items() %}
+{% set path = "{}/editorials/{}".format(url, year) %} 
+<div id="index">
+    <h4>{{ year }} Editorials </h4>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-light">
+                <tr>
+                {% for size, col in [("10", "#"),  ("90", "Contest")] %}
+                    <th scope="col" style="width: {{ size  }}%!important">{{ col }}</th>
+                {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, file in editorials %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td> 
+                        {% if name %}<a href="{{ "{}/{}/{}".format(path, name, file) }}">{{ name }}</a>
+                        {% else %}<em>{{ name }}</em>{% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
