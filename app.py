@@ -44,7 +44,7 @@ pages = [("", "index"), ("about", "about"), ("schedule", "schedule"),
 for url, fname in pages:
     make_page(url, fname)
 
-make_lectures_pages(20, 20, "lectures", lectures_by_year)
+make_lectures_pages(21, 21, "lectures", lectures_by_year)
 # standard lectures page
 make_page("standard-lectures", "lectures",
           lectures_by_year={"Standard": lectures_by_year["Standard"]})
@@ -53,7 +53,7 @@ make_page("editorials", "editorials", editorials_by_year=editorials_by_year)
 
 @app.route("/otherlectures")
 def other_lectures():
-    used_keys = {"Standard", "2020-21"}
+    used_keys = {"Standard", "2021-22"}
     temp_dict = {}
     for k in lectures_by_year:
         if k not in used_keys:
